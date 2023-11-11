@@ -30,7 +30,6 @@ export default class JatekController {
             this.#lepesSzam++;
             this.#allapotLista[index] = !this.#allapotLista[index];
             let szomszedok = this.szomszedokKeresese(index);
-            // console.log("szomszedok", index, szomszedok);
 
             for (const szIdx of szomszedok) {
                 this.#allapotLista[szIdx] = !this.#allapotLista[szIdx];;
@@ -42,9 +41,8 @@ export default class JatekController {
             if (!this.#vege) {
                 this.#jatekTer.eredmeny(`${this.#lepesSzam}. lépés`)
             } else {
-                this.#jatekTer.eredmeny(`A játék végetért ${this.#lepesSzam}. lépésből`)
+                this.#jatekTer.eredmeny(`A játék végetért ${this.#lepesSzam} lépésből!`)
             }
-            // console.log("ellenőrzés:", this.#vege ? "VÉGE" : "nincs vége")
         }
     }
 
@@ -85,23 +83,11 @@ export default class JatekController {
     }
 
     ellenorzes() {
-        this.allapotLog();
         for (const lampa of this.#allapotLista) {
             if (!lampa) {
                 return false;
             }
         }
         return true;
-    }
-
-    allapotLog() {
-        return;
-        for (let y = 0; y < this.#meret; y++) {
-            let log = [];
-            for (let x = 0; x < this.#meret; x++) {
-                log.push(this.#allapotLista[y * this.#meret + x]);
-            }
-            console.log(log);
-        }
     }
 }
