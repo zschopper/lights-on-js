@@ -1,4 +1,3 @@
-// import Lampa from "../view/Lampa.js";
 import JatekTer from "../view/JatekTer.js";
 
 export default class JatekController {
