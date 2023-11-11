@@ -41,7 +41,7 @@ export default class JatekController {
             if (!this.#vege) {
                 this.#jatekTer.eredmeny(`${this.#lepesSzam}. lépés`)
             } else {
-                this.#jatekTer.eredmeny(`A játék végetért ${this.#lepesSzam} lépésből!`)
+                this.#jatekTer.eredmeny(`A játék véget ért ${this.#lepesSzam} lépésből!`)
             }
         }
     }
