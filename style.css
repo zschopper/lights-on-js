@@ -1,0 +1,71 @@
+* {
+    /* reset */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --meret: 3;
+    --szelesseg: 500px;
+    --gap: 3px;
+    --cellameret: calc((100% - ((var(--meret) - 1) * var(--gap))) / var(--meret));
+}
+
+body {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main,
+footer {
+    margin: 20px auto 20px;
+    width: var(--szelesseg);
+}
+
+h1 {
+    padding-bottom: .5em;
+}
+
+.panel {
+    background-color: azure;
+    padding: 10px;
+}
+
+button.uj {
+    padding: .5rem;
+    border: 1px solid black;
+    border-radius: .3rem;
+}
+.jatek {
+    height: 100%;
+    display: grid;
+    grid-gap: var(--gap);
+    width: var(--szelesseg);
+    height: var(--szelesseg);
+    grid-template-columns: repeat(var(--meret), var(--cellameret));
+    grid-template-rows: repeat(var(--meret), var(--cellameret));
+    grid-auto-rows: calc(var(--szelesseg) / var(--meret));
+    grid-auto-columns: calc(var(--szelesseg) / var(--meret));
+    background-color: tan;
+}
+
+.lampa {
+    margin: 5%;
+    border-radius: 50%;
+}
+
+.lampa.kikapcsolt {
+    background-color: #000080;
+    border: 3px solid #000070;
+}
+
+.lampa.bekapcsolt {
+    background-color: #ffeb7a;
+    border: 3px solid #a3974f;
+}
+
+.eredmeny {
+    font-size: 120%;
+    font-weight: 300;
+    padding-top: 30px;
+}
